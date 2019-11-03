@@ -1,17 +1,18 @@
 name: fenwick_tree
-description: A simple fenwick tree in dart.
-version: 0.1.0
+description: A simple Fenwick Tree aka Binary Indexed Tree aka BIT in Dart.
+version: 0.1.0+1
+homepage: https://www.github.com/modulovalue/dart_fenwick_tree
 author: Modestas Valauskas <valauskasmodestas+dartpub@gmail.com>
-homepage: https://github.com/modulovalue/dart_fenwick_tree
-repository: https://github.com/modulovalue/dart_fenwick_tree
 issue_tracker: https://github.com/modulovalue/dart_fenwick_tree/issues
 
 environment:
-  sdk: '>2.2.2 <3.0.0'
+  sdk: '>=2.2.2 <3.0.0'
 
 dependencies:
-  meta: ^1.1.7
-  abstract_dart: ^0.0.3
+  meta: any
+  abstract_dart: ^1.0.1
 
 dev_dependencies:
-  test: ^1.6.6
+  extra_pedantic: ^1.1.1
+  test: ^1.5.0
+  test_coverage: ^0.2.0

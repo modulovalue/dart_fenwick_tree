@@ -3,17 +3,27 @@ import 'package:fenwick_tree/fenwick_tree.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final intGroup = AnonymousGroup(() => 0, (a, b) => a + b, (a, b) => a - b);
-
   group("$FenwickTree", () {
+    test(".create", () {
+      final tree = FenwickTree<double>.create(
+        identity: () => 0.0,
+        addition: (a, b) => a + b,
+        subtraction: (a, b) => a - b,
+        size: 3,
+      );
+      tree.update(0, 1);
+      tree.update(1, 2);
+      tree.update(2, 3);
+      expect(tree.sum(2), 6);
+    });
     test("length", () {
-      final sut = FenwickTree(group: intGroup, size: 100);
+      final sut = FenwickTree(group: const IntSumGroup(), size: 100);
       List.generate(100, (a) => a).forEach((a) => sut.update(a, 1));
       expect(sut.length(), 100);
     });
     // https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
     test("update", () {
-      final sut = FenwickTree(group: intGroup, size: 12);
+      final sut = FenwickTree(group: const IntSumGroup(), size: 12);
       [2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9]
           .asMap()
           .entries
@@ -21,7 +31,7 @@ void main() {
       expect(sut.array, [0, 2, 3, 1, 7, 2, 5, 4, 21, 6, 13, 8, 30]);
     });
     group("sum", () {
-      final sut = FenwickTree(group: intGroup, size: 5);
+      final sut = FenwickTree(group: const IntSumGroup(), size: 5);
       [
         1,
         2,
@@ -43,7 +53,7 @@ void main() {
       });
     });
     group("rangeSum", () {
-      final sut = FenwickTree(group: intGroup, size: 5);
+      final sut = FenwickTree(group: const IntSumGroup(), size: 5);
       [
         1,
         2,
