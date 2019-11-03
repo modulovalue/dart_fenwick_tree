@@ -9,7 +9,7 @@ environment:
   sdk: '>=2.2.2 <3.0.0'
 
 dependencies:
-  meta: any
+  meta: ^1.0.0
   abstract_dart: ^1.0.1
 
 dev_dependencies:
