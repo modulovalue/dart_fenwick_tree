@@ -1,6 +1,6 @@
 name: fenwick_tree
-description: A simple Fenwick Tree aka Binary Indexed Tree aka BIT in Dart.
-version: 0.1.0+1
+description: A simple Fenwick Tree (also known as Binary Indexed Tree or BIT).
+version: 1.0.0
 homepage: https://www.github.com/modulovalue/dart_fenwick_tree
 author: Modestas Valauskas <valauskasmodestas+dartpub@gmail.com>
 issue_tracker: https://github.com/modulovalue/dart_fenwick_tree/issues
